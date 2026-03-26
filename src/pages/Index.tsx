@@ -6,6 +6,7 @@ import CultureSection from "@/components/CultureSection";
 import CinematicInterlude from "@/components/CinematicInterlude";
 import SectionDivider from "@/components/SectionDivider";
 import Footer from "@/components/Footer";
+import MusicPlayer from "@/components/MusicPlayer";
 import interludeLandscape from "@/assets/interlude-landscape.jpg";
 
 

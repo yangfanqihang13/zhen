@@ -15,6 +15,7 @@ const Index = () => {
     <div className="bg-ink min-h-screen relative">
       {/* Film grain overlay for premium texture */}
       <div className="grain-overlay" />
+      <MusicPlayer />
       <Navbar />
       <div id="hero">
         <HeroSection />

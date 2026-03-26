@@ -16,6 +16,14 @@ const MusicPlayer = () => {
     }
   }, [volume]);
 
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.play().catch(() => {
+        setIsPlaying(false);
+      });
+    }
+  }, []);
+
   const togglePlay = () => {
     if (!audioRef.current) return;
     if (isPlaying) {

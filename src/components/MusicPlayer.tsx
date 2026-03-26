@@ -5,7 +5,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 
 const MusicPlayer = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [volume, setVolume] = useState(0.3);
   const [showVolume, setShowVolume] = useState(false);
   const { t } = useLanguage();
@@ -15,6 +15,14 @@ const MusicPlayer = () => {
       audioRef.current.volume = volume;
     }
   }, [volume]);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.play().catch(() => {
+        setIsPlaying(false);
+      });
+    }
+  }, []);
 
   const togglePlay = () => {
     if (!audioRef.current) return;

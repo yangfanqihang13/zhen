@@ -8,12 +8,13 @@ import SectionDivider from "@/components/SectionDivider";
 import Footer from "@/components/Footer";
 import MusicPlayer from "@/components/MusicPlayer";
 import interludeLandscape from "@/assets/interlude-landscape.jpg";
-
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Index = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="bg-ink min-h-screen relative">
-      {/* Film grain overlay for premium texture */}
       <div className="grain-overlay" />
       <MusicPlayer />
       <Navbar />
@@ -29,9 +30,9 @@ const Index = () => {
 
       <CinematicInterlude
         image={interludeLandscape}
-        quote="四百余年，风霜不改其骨；三千构件，榫卯自成乾坤"
-        subtitle="Timeless Heritage"
-        verticalText="匠心独运"
+        quote={t.interlude.quote}
+        subtitle={t.interlude.subtitle}
+        verticalText={t.interlude.verticalText}
       />
 
       <SectionDivider symbol="构" />
@@ -39,8 +40,6 @@ const Index = () => {
       <div id="architecture">
         <ArchitectureSection />
       </div>
-
-      
 
       <SectionDivider symbol="道" />
 

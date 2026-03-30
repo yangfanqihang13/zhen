@@ -16,6 +16,7 @@ const modelPaths = [
   "/models/column-top-ang.glb",
   "/models/small-intermediate.glb",
 ];
+const modelScales = [1.1, 0.49, 1.5];
 
 const diagramSources = [structureDougong, structureLever, structureTenon];
 const diagramAlts = ["三层斗拱形制对比", "杠杆式斗拱榫卯结构解析", "馒头榫与燕尾榫细节"];
@@ -77,7 +78,7 @@ const DougongSection = () => {
           </div>
 
           <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 0.15, duration: 0.5 }} className="rounded-lg overflow-hidden border border-border bg-card md:col-span-1">
-            <BracketViewer modelPath={modelPaths[activeLayer]} height="280px" />
+            <BracketViewer modelPath={modelPaths[activeLayer]} height="280px" scale={modelScales[activeLayer]} />
             <div className="px-4 py-3 border-t border-border">
               <h4 className="text-paper font-serif-cn text-sm font-bold mb-1">{layers[activeLayer].modelName}</h4>
               <p className="text-muted-foreground font-sans-cn text-xs leading-relaxed">{layers[activeLayer].modelDesc}</p>
